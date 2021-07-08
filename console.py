@@ -12,6 +12,9 @@ book_1 = Book("Paddy Clarke Ha Ha Ha", "Fiction", "Minerva", author_1)
 book_2 = Book("The Silmarillion", "Fantasy", "Unwin Paperbacks", author_2)
 book_3 = Book("Brothers Karamazaov", "Fiction", "Penguin", author_3)
 
+book_repository.delete_all()
+author_repository.delete_all()
+
 author_repository.save_author(author_1)
 author_repository.save_author(author_2)
 author_repository.save_author(author_3)
@@ -20,5 +23,5 @@ book_repository.save_book(book_1)
 book_repository.save_book(book_2)
 book_repository.save_book(book_3)
 
-print(author_repository.select_one(1))
-print(book_repository.select_book(1))
+print(author_repository.select_all())
+print(book_repository.select_all())
