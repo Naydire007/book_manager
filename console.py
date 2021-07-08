@@ -19,3 +19,6 @@ author_repository.save_author(author_3)
 book_repository.save_book(book_1)
 book_repository.save_book(book_2)
 book_repository.save_book(book_3)
+
+print(author_repository.select_one(1))
+print(book_repository.select_book(1))

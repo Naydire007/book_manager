@@ -11,4 +11,26 @@ def save_author(author):
     author.id = id
     return author
 
+def select_all():
+    authors = []
+    sql = "SELECT * FROM authors"
+    results = run_sql(sql)
+    
+    for row in results:
+        author = Author(row['first_name'], row['last_name'], row['id'])
+        authors.append(author)
+    
+    return authors
+
+def select_one(id):
+    author = None
+    sql = "SELECT * FROM authors WHERE id = %s"
+    values = [id]
+    results = run_sql(sql, values)[0]
+    
+    if results is not None:
+        author = Author(results['first_name'], results['last_name'], results['id'])
+    
+    return author
+
     
