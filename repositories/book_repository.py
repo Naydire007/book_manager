@@ -4,10 +4,11 @@ from models.book import Book
 import repositories.author_repository as author_repository 
 
 def save_book(book):
-    sql = "INSERT INTO books (title,genre,publisher,author) VALUES (%s,%s,%s,%s) RETURNING *"
+    sql = "INSERT INTO books (title, genre, publisher, author_id) VALUES (%s,%s,%s,%s) RETURNING *"
     values = [book.title, book.genre, book.publisher, book.author.id]
     results = run_sql(sql, values)
     id = results[0]['id']
+    book.id = id 
     return book
 
 # def select_all():
