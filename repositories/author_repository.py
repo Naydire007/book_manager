@@ -32,5 +32,3 @@ def select_one(id):
         author = Author(results['first_name'], results['last_name'], results['id'])
     
     return author
-
-    

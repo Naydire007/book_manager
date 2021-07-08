@@ -32,3 +32,9 @@ def select_book(id):
         author = author_repository.select_one(result['author_id'])
         book = Book(result['title'],result['genre'],result['publisher'], author, result['id'])
     return book
+
+def delete_book(id):
+
+    sql = "DELETE FROM books WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)

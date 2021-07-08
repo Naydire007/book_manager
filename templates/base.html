@@ -12,9 +12,6 @@
   <header>
     <nav>
       <ul class="menu">
-        <li><a href="{{ url_for('home') }}">Home</a></li>
-        <li><a href="{{ url_for('books.books') }}">Books</a></li>
-        <li><a href="{{ url_for('books.new_book') }}">New Book</a></li>
       </ul>
     </nav>
   </header>
@@ -22,8 +19,5 @@
     {% block content %}
     {% endblock %}
   </div>
-
-  {%block home%}
-  {% endblock %}
 </body>
 </html>
